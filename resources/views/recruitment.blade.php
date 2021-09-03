@@ -2,6 +2,12 @@
 
 @section('content')
 
+    <style>
+        ol > li{
+            padding-bottom: 10px;
+        }
+    </style>
+
    <div style="padding: 20px;">
        <div class="container">
            <div class="row">
@@ -114,6 +120,19 @@
                            <h5>Job Requirement</h5>
                        </div>
                        <div class="panel-body">
+
+                           <div class="text-center">
+                               <img src="{{url('assets/images/logo2.png')}}" alt="">
+                           </div>
+
+                           <hr>
+
+                          <ol>
+                              <li>Job Title : {{ $job->job_title }}</li>
+                              <li>Required No Of Employee's : {{ $job->employee }}</li>
+                              <li>Qualification/Work Experience : {{ $job->experience }}</li>
+                              <li>Job Description: {!! $job->description !!}</li>
+                          </ol>
 
                        </div>
                    </div>

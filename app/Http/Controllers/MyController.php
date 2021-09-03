@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Job;
 use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
     //
 
-    public function recruitment(){
+    public function recruitment(Job $job){
         $data['page_title'] = "Submit Application";
+        $data['job'] = $job;
         return view('recruitment',$data);
     }
 
