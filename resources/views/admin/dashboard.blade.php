@@ -38,7 +38,33 @@
                             </div>
                             <div class="panel-body">
                                 <h4 align="center">
-                                    {{ \App\User::where('role','>',1)->count() }}
+                                    {{ \App\User::where('role','>',1)->where('status',1)->count() }}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                Total Recruitment Job
+                            </div>
+                            <div class="panel-body">
+                                <h4 align="center">
+                                    0
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                Total  Recruitment Applications
+                            </div>
+                            <div class="panel-body">
+                                <h4 align="center">
+                                    {{ \App\User::where('role','>',1)->where('status',0)->count() }}
                                 </h4>
                             </div>
                         </div>

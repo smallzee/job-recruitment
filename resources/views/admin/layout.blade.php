@@ -125,14 +125,14 @@
                 <li class="header">STAFF RECRUITMENT</li>
 
                 <li>
-                    <a href="{{url('admin/recruitment-type')}}">
+                    <a href="{{url('admin/recruitment')}}">
                         <i class="fa fa-user text-warning "></i>
-                        <span>All Recruitment Staff's </span>
+                        <span>All Staff Recruitment </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{url('admin/recruitment-application')}}">
+                    <a href="{{url('admin/application')}}">
                         <i class="fa fa-user text-warning "></i>
                         <span>All Recruitment Application </span>
                     </a>
