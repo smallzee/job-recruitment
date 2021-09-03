@@ -1,0 +1,42 @@
+#mgt{
+	background-color: #0099cc;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#mgt .tittle{
+	color: #fff;
+}
+
+#mgt h4{
+	color: #FD1231;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#mgt h5{
+	color: #fff;
+	text-align: center;
+}
+
+.logo{
+	margin-top: -10px;
+	margin-left: 8px;    
+}
+
+@media (max-width: 995px) {
+
+  .logo{   
+    margin-top: -8px;
+    margin-left: -8px;
+  }
+}
+
+@media (max-width: 995px) {
+
+  .logo{    
+    margin-top: -8px;
+    margin-left: -8px;
+  }  
+}

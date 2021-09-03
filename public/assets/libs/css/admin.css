@@ -1,0 +1,203 @@
+/* Styles go here */
+body {
+    padding-top: 51px;
+}
+
+.navbar.navbar-static .navbar-header {
+    float: left;
+}
+
+.navbar .navbar-toggle.toggle-left {
+    float: left;
+    margin-left: 15px;
+}
+
+.navbar .navbar-toggle.toggle-sidebar, [data-toggle="sidebar"] {
+    display: block;
+}
+
+/* sidebar settings */
+.sidebar {
+    position: fixed;
+    display: block;
+    top: 51px;
+    bottom:0;
+    z-index: 1000;
+    min-height: 100%;
+    max-height: none;
+    overflow-y: auto;
+}
+
+.sidebar-left {
+    left: 0;
+}
+
+
+/* css to override hiding the sidebar according to different screen sizes */  
+.row .sidebar.sidebar-left.sidebar-xs-show {
+    left: 0;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -moz-transform: none;
+}
+
+  
+@media (min-width: 768px) {
+    .row .sidebar.sidebar-left.sidebar-sm-show {
+        left: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }
+
+ /*right sidebar is untested */
+    .row .sidebar.sidebar-right.sidebar-sm-show {
+        right: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }  
+} 
+
+@media (min-width: 992px) {
+    .row .sidebar.sidebar-left.sidebar-md-show {
+        left: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }
+  .row .sidebar.sidebar-right.sidebar-md-show {
+        right: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }
+}
+
+@media (min-width: 1170px) {
+    .row .sidebar.sidebar-left.sidebar-lg-show {
+        left: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }
+  .row .sidebar.sidebar-right.sidebar-lg-show {
+        right: 0;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -moz-transform: none;
+    }
+}
+
+/* animation class - optional: without it the sidebar would just pop in and out*/
+.sidebar-animate {
+    -webkit-transition: -webkit-transform 300ms ease;
+    -moz-transition: -moz-transform 300ms ease;
+    transition: transform 300ms ease;
+}
+
+/* Left panel positioning classes */
+.sidebar.sidebar-left {
+    -webkit-transform: translate3d(-100%,0,0);
+    -moz-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+}
+
+.sidebar.sidebar-left.sidebar-open {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -moz-transform: none;
+}
+
+.sidebar.sidebar-right.sidebar-open {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -moz-transform: none;
+}
+
+
+.navbar{  
+    min-height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Tahoma;
+}
+
+
+.navbar-default{
+    /*background-color: #DA7944;*/
+    background-color: #333;
+    border-radius: 0;
+    border-bottom: none;
+    border-top-color: transparent;
+}
+
+.sidebar {
+    padding: 20px 0;
+    /*background-color: #DA7944;*/
+    background-color: #444;
+    border-right: 1px solid #eee;
+}
+
+a.navbar-brand{
+    color: #fff !important;
+}
+
+.navbar-stacked > li >a{
+    color: #fff;
+    border-left: transparent solid 4px;
+}
+
+.navbar-stacked > li >a:focus{
+    background-color: inherit;
+}
+
+.navbar-stacked > li >a:hover{
+    color: #eee;
+    background-color: #555;
+    border-left: #DA7944 solid 4px;
+}
+
+.second-nav{
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+.navbar-stacked > li .second-nav li a{
+  color: #fff;
+  border-left: transparent solid 4px;
+  display: block;
+  position: relative;  
+  padding: 10px 15px;
+}
+
+.navbar-stacked > li .second-nav li a:hover{
+  color: #eee;
+  background-color: #555;
+  border-left: #DA7944 solid 4px;
+  text-decoration: none;
+}
+
+.main{
+  background-color: #fff;
+}
+
+
+.room-1{
+    background-color: green;
+    color: #fff;
+    display: block;
+}
+
+.room-2{
+    background-color: gold;
+    color: #fff;
+    display: block;
+}
+
+.room-3{
+    background-color: red;
+    color: #fff;
+    display: block;
+}
