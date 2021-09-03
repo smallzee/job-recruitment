@@ -36,15 +36,18 @@
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form  method="post">
+        @include('flash')
+
+        <form method="post">
+            @csrf
             <div class="form-group has-feedback">
                 <label for="">Email Address</label>
-                <input type="email" required class="form-control" placeholder="Email Address">
+                <input type="email" name="email_address" required class="form-control" placeholder="Email Address">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <label for="">Password</label>
-                <input type="password" required class="form-control" placeholder="Password">
+                <input type="password" name="password" required class="form-control" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>

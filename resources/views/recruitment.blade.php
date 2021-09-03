@@ -96,7 +96,7 @@
                            <div class="panel-body">
                                <div class="form-group">
                                    <label for="">Attachment File </label>
-                                   <input type="file" name="file" required accept="application/pdf" id="">
+                                   <input type="file" name="attachment" required accept="application/pdf" id="">
                                    <small>Should be in PDF format</small>
                                </div>
                            </div>

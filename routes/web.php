@@ -19,7 +19,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/recruitment', "MyController@recruitment")->name('recruitment');
+Route::get('/recruitment/{recruitment}', "MyController@recruitment")->name('recruitment');
+Route::get('/job-recruitment', "MyController@job_recruitment")->name('job_recruitment');
 
 // admin route
 Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){

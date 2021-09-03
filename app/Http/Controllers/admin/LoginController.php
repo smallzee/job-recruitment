@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -16,7 +18,11 @@ class LoginController extends Controller
     {
         //
 
-        return view('admin.index');
+        if (Auth::check() && Auth::user()->role == 1){
+            return redirect()->intended('admin/dashboard');
+        }else{
+            return view('admin.index',array('page_title'=>'Admin Login'));
+        }
 
     }
 
@@ -39,6 +45,35 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(),[
+            'email_address'=>'required|email',
+            'password'=>'required'
+        ]);
+
+        if ($validator->fails()){
+            $msg = (count($validator->errors()->all()) == 1) ? 'An error occurred' : 'Some error(s) occurred';
+
+            foreach ($validator->errors()->all() as $value){
+                $msg.='<p>'.$value.'</p>';
+            }
+
+            return redirect()->back()->with('flash_error',$msg)->withInput();
+        }
+
+        $log = Auth::attempt([
+            'email_address'=>$request->email,
+            'password'=>$request->password
+        ]);
+
+        if ($log){
+            if (Auth::user()->role_id == 1){
+                return redirect()->intended('admin/dashboard');
+            }else{
+                return back()->with("flash_error", 'Access denied')->withInput();
+            }
+        }else{
+            return back()->with("flash_error", 'Invalid login details please try again')->withInput();
+        }
     }
 
     /**
