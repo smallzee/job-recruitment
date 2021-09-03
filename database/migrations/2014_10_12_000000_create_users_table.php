@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->double('allowance')->default(0);
             $table->text('attachment')->nullable();
             $table->integer('role')->default(1);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

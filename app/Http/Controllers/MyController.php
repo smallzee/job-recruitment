@@ -17,4 +17,5 @@ class MyController extends Controller
         $data['page_title'] = "Job Recruitment";
         return view('job-recruitment',$data);
     }
+
 }

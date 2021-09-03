@@ -4,7 +4,7 @@
     <meta property="og:locale" content="en_US">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>{{ env('APP_NAME') }} - {{ $page_title }}</title>
+    <title> {{ $page_title }} - {{ env('APP_NAME') }}</title>
 
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{url('assets/admin/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -92,7 +92,51 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{url('admin/admin')}}">
+                        <i class="fa fa-user text-primary "></i>
+                        <span>All Admin</span>
+                    </a>
+                </li>
 
+                <li>
+                    <a href="{{url('admin/create-admin')}}">
+                        <i class="fa fa-plus text-primary "></i>
+                        <span>Create Admin</span>
+                    </a>
+                </li>
+
+                <li class="header">JOB RECRUITMENT</li>
+
+                <li>
+                    <a href="{{url('admin/create-job-recruitment')}}">
+                        <i class="fa fa-plus text-info "></i>
+                        <span>Create Recruitment Job</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{url('admin/job-recruitment')}}">
+                        <i class="fa fa-plus text-info "></i>
+                        <span>All Recruitment Job</span>
+                    </a>
+                </li>
+
+                <li class="header">STAFF RECRUITMENT</li>
+
+                <li>
+                    <a href="{{url('admin/recruitment-type')}}">
+                        <i class="fa fa-user text-warning "></i>
+                        <span>All Recruitment Staff's </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{url('admin/recruitment-application')}}">
+                        <i class="fa fa-user text-warning "></i>
+                        <span>All Recruitment Application </span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{url('admin/logout')}}">
