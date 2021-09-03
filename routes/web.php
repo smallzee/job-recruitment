@@ -25,4 +25,5 @@ Route::get('/job-recruitment', "MyController@job_recruitment")->name('job_recrui
 // admin route
 Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
     Route::resource('/', "LoginController");
+    Route::get('/dashboard', "AdminController@dashboard")->name('dashboard');
 });

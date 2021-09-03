@@ -61,7 +61,7 @@ class LoginController extends Controller
         }
 
         $log = Auth::attempt([
-            'email_address'=>$request->email,
+            'email_address'=>$request->email_address,
             'password'=>$request->password
         ]);
 

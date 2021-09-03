@@ -42,7 +42,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{url('assets/admin/css/style.css')}}">
 </head>
-<body class="hold-transition skin-blue sidebar-mini" style="font-size: 15px;">
+<body class="hold-transition skin-blue sidebar-mini">
 
 <div class="wrapper">
     <header class="main-header">
@@ -68,7 +68,6 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{url('assets/images/')}}" class="user-image" alt="User Image">
                             <span class="hidden-xs">{{ucwords(auth()->user()->full_name)}}</span>
                         </a>
                     </li>
@@ -81,110 +80,19 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="" style="width: 40px; height: 40px;" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>{{ucwords(auth()->user()->full_name)}}</p>
-                    <a href="#"><i class="fa fa-circle text-green"></i> Online</a>
-                </div>
-            </div>
+
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-                <li >
+
+                <li>
                     <a href="{{url('admin/dashboard')}}">
                         <i class="fa fa-home text-primary "></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="{{url('admin/role')}}">
-                        <i class="fa fa-map text-primary "></i>
-                        <span>Admin Role</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="{{url('admin/admin')}}">
-                        <i class="fa fa-user text-primary "></i>
-                        <span>All Admins</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{url('admin/country')}}">
-                        <i class="fa fa-map-marker text-primary "></i>
-                        <span>All Countries</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{url('admin/add-pricing')}}">
-                        <i class="fa fa-plus text-primary "></i>
-                        <span>Add Investment Package</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{url('admin/pricing')}}">
-                        <i class="fa fa-cloud text-primary "></i>
-                        <span>All Investment Package</span>
-                    </a>
-                </li>
-
-                <li class="header">PAYMENT METHOD</li>
-
-                <li >
-                    <a href="{{url('admin/payment-method')}}">
-                        <i class="fa fa-credit-card text-primary "></i>
-                        <span> &nbsp; All Payment Method</span>
-                    </a>
-                </li>
-
-                <li class="header">USERS / INVESTMENT / WITHDRAWAL</li>
-
-
-                <li >
-                    <a href="{{url('admin/users')}}">
-                        <i class="fa fa-user text-primary "></i>
-                        <span> &nbsp; All Users</span>
-                    </a>
-                </li>
-
-                <li >
-                    <a href="{{url('admin/mining')}}">
-                        <i class="fa-history fa text-primary "></i>
-                        <span>&nbsp; All Investment</span>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="{{url('admin/deposit')}}">
-                        <i class="fa fa-wallet text-primary "></i>
-                        <span>All Users Deposited</span>
-                    </a>
-                </li>
-
-                <li >
-                    <a href="{{url('admin/withdrawal')}}">
-                        <i class="fa fa-wallet text-primary "></i>
-                        <span>&nbsp; All Users Withdrawal</span>
-                    </a>
-                </li>
-
-
-                <li class="header">SETTINGS</li>
-
-                <li>
-                    <a href="{{url('admin/settings')}}">
-                        <i class="fa fa-wrench text-primary"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
 
                 <li>
                     <a href="{{url('admin/logout')}}">
