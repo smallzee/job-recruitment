@@ -115,7 +115,8 @@ class AdminController extends Controller
            'job_title'=>'required',
            'experience'=>'required',
            'employee'=>'required|numeric',
-           'description'=>'required'
+           'description'=>'required',
+           'position'=>'required'
        ]);
 
         if ($validator->fails()){
@@ -134,7 +135,8 @@ class AdminController extends Controller
             'job_title'=>$request->job_title,
             'experience'=>$request->experience,
             'employee'=>$request->employee,
-            'description'=>$request->description
+            'description'=>$request->description,
+            'position'=>$request->position
         ]);
 
         return back()->with('flash_info','Job recruitment has been created successfully');
@@ -157,7 +159,8 @@ class AdminController extends Controller
             'job_title'=>'required',
             'experience'=>'required',
             'employee'=>'required|numeric',
-            'description'=>'required'
+            'description'=>'required',
+            'position'=>'required'
         ]);
 
         if ($validator->fails()){
@@ -176,6 +179,7 @@ class AdminController extends Controller
         $job->experience = $request->experience;
         $job->employee = $request->employee;
         $job->description = $request->description;
+        $job->position = $request->position;
         $job->save();
 
         return back()->with('flash_info',' Job recruitment has been updated successfully');
@@ -189,6 +193,12 @@ class AdminController extends Controller
     public function application(){
         $data['page_title'] = "All Recruitment Application";
         return view('admin.application',$data);
+    }
+
+    public function view_application(User $user){
+        $data['page_title'] = "View Application";
+        $data['user'] = $user;
+        return view('admin.view-application',$data);
     }
 
     public function logout()

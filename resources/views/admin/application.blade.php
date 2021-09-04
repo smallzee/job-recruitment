@@ -19,31 +19,51 @@
                         <thead>
                         <tr>
                             <td>SN</td>
-                            <th>Staff Id</th>
                             <th>Email Address</th>
                             <th>Full Name</th>
                             <th>Phone Number</th>
                             <th>Gender</th>
+                            <th>Seek Position</th>
                             <th>Marital Status</th>
                             <th>Date Of Birth</th>
                             <th>Status</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <td>SN</td>
-                            <th>Staff Id</th>
                             <th>Email Address</th>
                             <th>Full Name</th>
                             <th>Phone Number</th>
                             <th>Gender</th>
+                            <th>Seek Position</th>
                             <th>Marital Status</th>
                             <th>Date Of Birth</th>
                             <th>Status</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
+                        <tbody>
+                        @php($sn =1)
+                        @foreach(\App\User::where('role',2)->whereStatus(0)->orderBy('id','desc')->get() as $value)
+                            <tr>
+                                <td>{{$sn++}}</td>
+                                <td>{{$value->email_address}}</td>
+                                <td>{{ ucwords($value->full_name) }}</td>
+                                <td>{{$value->phone_number}}</td>
+                                <td>{{ ucwords($value->gender) }}</td>
+                                <td>{{ $value->job->position }}</td>
+                                <td>{{ ucwords($value->marital_status) }}</td>
+                                <td>{{ $value->date_of_birth }}</td>
+                                <td>{{ ($value->status == 0) ? 'New Application' : 'Staff' }}</td>
+                                <td>{{ $value->created_at }}</td>
+                                <td><a href="{{url('admin/view-application/'.$value->id)}}" class="btn btn-primary btn-sm">View</a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
 

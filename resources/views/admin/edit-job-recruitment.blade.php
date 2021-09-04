@@ -33,6 +33,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="">Position</label>
+                        <input type="text" value="{{ $job->position }}" class="form-control" required placeholder="Position" name="position" id="">
+                    </div>
+
+                    <div class="form-group">
                         <label for="">Job Description</label>
                         <textarea name="description" class="form-control" id="" cols="30" rows="10">{{ $job->description }}</textarea>
                     </div>

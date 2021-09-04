@@ -23,9 +23,9 @@
                             </div>
                             <div class="panel-body">
 
-                                <h4 align="center">
+                                <h2 align="center">
                                     {{ \App\User::where('role','1')->count() }}
-                                </h4>
+                                </h2>
 
                             </div>
                         </div>
@@ -37,35 +37,35 @@
                                 Total Staff Recruitment
                             </div>
                             <div class="panel-body">
-                                <h4 align="center">
+                                <h2 align="center">
                                     {{ \App\User::where('role','>',1)->where('status',1)->count() }}
-                                </h4>
+                                </h2>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="panel panel-warning">
+                        <div class="panel panel-success">
                             <div class="panel-heading">
                                 Total Recruitment Job
                             </div>
                             <div class="panel-body">
-                                <h4 align="center">
-                                    0
-                                </h4>
+                                <h2 align="center">
+                                    {{ \App\Job::count() }}
+                                </h2>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="panel panel-warning">
+                        <div class="panel panel-success">
                             <div class="panel-heading">
-                                Total  Recruitment Applications
+                                Total Recruitment Applications
                             </div>
                             <div class="panel-body">
-                                <h4 align="center">
+                                <h2 align="center">
                                     {{ \App\User::where('role','>',1)->where('status',0)->count() }}
-                                </h4>
+                                </h2>
                             </div>
                         </div>
                     </div>

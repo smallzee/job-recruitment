@@ -31,6 +31,11 @@
                         <label for="">Employee Number</label>
                         <input type="text" class="form-control" required placeholder="Employee Number" name="employee" id="">
                     </div>
+
+                    <div class="form-group">
+                        <label for="">Position</label>
+                        <input type="text" class="form-control" required placeholder="Position" name="position" id="">
+                    </div>
                     
                     <div class="form-group">
                         <label for="">Job Description</label>

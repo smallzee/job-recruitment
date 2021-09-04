@@ -22,7 +22,8 @@
                             <th>SN</th>
                             <th>Job Title</th>
                             <th>Qualification/Work Experience </th>
-                            <th> Employee Number </th>
+                            <th>Required No Of Employee's</th>
+                            <th>Position</th>
                             <th>Job Description</th>
                             <th>Actions</th>
                         </tr>
@@ -32,7 +33,8 @@
                             <th>SN</th>
                             <th>Job Title</th>
                             <th>Qualification/Work Experience </th>
-                            <th> Employee Number </th>
+                            <th>Required No Of Employee's</th>
+                            <th>Position</th>
                             <th>Job Description</th>
                             <th>Actions</th>
                         </tr>
@@ -45,7 +47,8 @@
                                 <td>{{ $value->job_title }}</td>
                                 <td>{{ $value->experience }}</td>
                                 <td>{{ $value->employee }}</td>
-                                <td>{!!  $value->description !!}</td>
+                                <td>{{ $value->position }}</td>
+                                <td>{!!  strip_tags($value->description) !!}</td>
                                 <td><a href="{{url('admin/edit-job-recruitment/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
                             </tr>
                         @endforeach

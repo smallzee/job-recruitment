@@ -21,6 +21,8 @@ Route::get('/about', function () {
 
 Route::get('/recruitment/{job}', "MyController@recruitment")->name('recruitment');
 Route::get('/job-recruitment', "MyController@job_recruitment")->name('job_recruitment');
+Route::post('/create_recruitment', "MyController@create_recruitment")->name('create_recruitment');
+
 
 // admin route
 Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
@@ -37,6 +39,7 @@ Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
 
     Route::post('/create_job', "AdminController@create_job")->name('create_job');
     Route::get('/edit-job-recruitment/{job}', "AdminController@edit_job_recruitment")->name('edit_job_recruitment');
+    Route::get('/view-application/{user}', "AdminController@view_application")->name('view_application');
 
     Route::get('/recruitment', "AdminController@recruitment")->name('recruitment');
     Route::get('/application', "AdminController@application")->name('application');
@@ -44,7 +47,6 @@ Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
 
     Route::post('/create_new_admin', "AdminController@create_new_admin")->name('create_new_admin');
     Route::post('/update_admin', "AdminController@update_admin")->name('update_admin');
-
 
 
     // logout

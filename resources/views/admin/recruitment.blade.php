@@ -19,7 +19,7 @@
                         <thead>
                         <tr>
                             <td>SN</td>
-                            <th>Application Id</th>
+                            <th>Staff Id</th>
                             <th>Email Address</th>
                             <th>Full Name</th>
                             <th>Phone Number</th>
@@ -33,7 +33,7 @@
                         <tfoot>
                         <tr>
                             <td>SN</td>
-                            <th>Application Id</th>
+                            <th>Staff Id</th>
                             <th>Email Address</th>
                             <th>Full Name</th>
                             <th>Phone Number</th>

@@ -24,7 +24,8 @@
                                             <div class="col-sm-8">
                                                 <p>Required No Of Employee's : {{ $value->employee }}</p>
                                                 <p>Qualification/Work Experience  : {{$value->experience}}</p>
-                                                <p>Job Description : {!! $value->description !!}</p>
+                                                <p>Position : {{ $value->position }}</p>
+                                                <p>Job Description : {!! strip_tags($value->description) !!}</p>
 
                                                 <a href="{{url('recruitment/'.$value->id)}}" class="btn btn-primary btn-block">Apply</a>
                                             </div>

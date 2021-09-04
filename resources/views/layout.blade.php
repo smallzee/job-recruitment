@@ -42,7 +42,6 @@
             <li><a href="{{url('/')}}">Home</a></li>
             <li><a href="{{url('about')}}">About Developers</a></li>
             <li><a href="{{url('job-recruitment')}}">Job Recruitment</a></li>
-            <li><a href="{{url('status')}}">Recruitment Status</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

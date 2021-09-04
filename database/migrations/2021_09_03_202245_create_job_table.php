@@ -19,6 +19,7 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->string('experience');
             $table->integer('employee');
+            $table->text('position');
             $table->timestamps();
         });
     }

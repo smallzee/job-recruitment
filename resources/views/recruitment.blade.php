@@ -11,8 +11,10 @@
    <div style="padding: 20px;">
        <div class="container">
            <div class="row">
-               <form action="" method="post">
+               <form action="{{url('create_recruitment')}}" enctype="multipart/form-data" method="post">
+                   @csrf
                    <div class="col-sm-8">
+                       @include('flash')
                        <div class="panel panel-default">
                            <div class="panel-heading">
                                <h5>Submit Application</h5>
@@ -72,7 +74,7 @@
                                        <div class="col-sm-12">
                                            <div class="form-group">
                                                <label for="">Address</label>
-                                               <textarea name="" class="form-control" id="" placeholder="Address" style="resize: none"></textarea>
+                                               <textarea name="address" class="form-control" id="" placeholder="Address" style="resize: none"></textarea>
                                            </div>
                                        </div>
 
@@ -92,6 +94,8 @@
                                    </div>
                            </div>
                        </div>
+
+                       <input type="hidden" name="recruitment_id" value="{{ $job->id }}" id="">
 
                        <div class="panel panel-default">
                            <div class="panel-heading">
@@ -131,7 +135,8 @@
                               <li>Job Title : {{ $job->job_title }}</li>
                               <li>Required No Of Employee's : {{ $job->employee }}</li>
                               <li>Qualification/Work Experience : {{ $job->experience }}</li>
-                              <li>Job Description: {!! $job->description !!}</li>
+                              <li>Position : {{ $job->position }}</li>
+                              <li>Job Description: {!! strip_tags($job->description) !!}</li>
                           </ol>
 
                        </div>
