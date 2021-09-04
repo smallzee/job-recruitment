@@ -28,6 +28,7 @@ Route::post('/create_recruitment', "MyController@create_recruitment")->name('cre
 Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
     Route::resource('/', "LoginController");
     Route::get('/dashboard', "AdminController@dashboard")->name('dashboard');
+    Route::get("download/{file}", "MyController@download")->name('download');
 
     Route::get('/admin', "AdminController@admin")->name('admin');
     Route::get('/create-admin', "AdminController@create_admin")->name('create_admin');
@@ -41,9 +42,14 @@ Route::group(['namespace'=>'admin','prefix'=>'admin'], function (){
     Route::get('/edit-job-recruitment/{job}', "AdminController@edit_job_recruitment")->name('edit_job_recruitment');
     Route::get('/view-application/{user}', "AdminController@view_application")->name('view_application');
 
+    Route::get('/view-staff/{user}', "AdminController@view_staff")->name('view_staff');
+
     Route::get('/recruitment', "AdminController@recruitment")->name('recruitment');
     Route::get('/application', "AdminController@application")->name('application');
     Route::post('/update_job', "AdminController@update_job")->name('update_job');
+
+    Route::post('/update_recruitment', "AdminController@update_recruitment")->name('update_recruitment');
+
 
     Route::post('/create_new_admin', "AdminController@create_new_admin")->name('create_new_admin');
     Route::post('/update_admin', "AdminController@update_admin")->name('update_admin');

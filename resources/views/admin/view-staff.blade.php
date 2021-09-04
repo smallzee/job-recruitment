@@ -18,6 +18,10 @@
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
+                            <td>Staff Id</td>
+                            <td>{{ $user->application_id }}</td>
+                        </tr>
+                        <tr>
                             <td>Email Address</td>
                             <td>{{ $user->email_address }}</td>
                         </tr>
@@ -58,12 +62,16 @@
                             <td>{{ ($user->status == 0 ) ? 'New Application' : 'Staff' }}</td>
                         </tr>
                         <tr>
-                            <td>Seek Position</td>
+                            <td>Position</td>
                             <td>{{ $user->job->position }}</td>
                         </tr>
                         <tr>
-                            <td>File Attachment</td>
-                            <td><a href="{{url('admin/download/'.$user->attachment)}}" class="btn btn-primary">Download Attachment</a></td>
+                            <td>Faculty</td>
+                            <td>{{ ucwords($user->faculty) }}</td>
+                        </tr>
+                        <tr>
+                            <td>Department</td>
+                            <td>{{ ucwords($user->department) }}</td>
                         </tr>
                     </table>
                 </div>
@@ -72,6 +80,7 @@
 
                 <form action="{{url('admin/update_recruitment')}}" method="post">
                     @csrf
+
                     <div class="form-group">
                         <label for="">Recruitment Status</label>
                         <select name="status" required id="" class="form-control">
@@ -93,18 +102,18 @@
 
                     <div class="form-group">
                         <label for="">Faculty</label>
-                        <input type="text" class="form-control" placeholder="Faculty" name="faculty" id="">
+                        <input type="text" class="form-control" value="{{ $user->faculty }}" placeholder="Faculty" name="faculty" id="">
                     </div>
 
                     <div class="form-group">
                         <label for="">Department</label>
-                        <input type="text" class="form-control"  name="department" placeholder="Department" id="">
+                        <input type="text" value="{{ $user->department }}" class="form-control"  name="department" placeholder="Department" id="">
                     </div>
 
                     <input type="hidden" name="id" value="{{ $user->id }}" id="">
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Submit" name="" id="">
+                        <input type="submit" class="btn btn-primary" value="Update" name="" id="">
                     </div>
                 </form>
 

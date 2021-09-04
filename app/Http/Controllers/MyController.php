@@ -32,7 +32,7 @@ class MyController extends Controller
             'educational_background'=>'required',
             'date_of_birth'=>'required',
             'place_of_birth'=>'required',
-            'address'=>'requied',
+            'address'=>'required',
             'attachment'=>'required|mimes:pdf'
         ]);
 
@@ -50,7 +50,7 @@ class MyController extends Controller
         if ($request->has('attachment')){
             $file = $request->file('attachment');
             $attachment = time().$file->getClientOriginalName();
-            $file->move('public/assets/images/'.$attachment);
+            $file->move(public_path('assets/images/').$attachment);
         }
 
         $user = new User();

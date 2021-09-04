@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->string('place_of_birth')->nullable();
             $table->double('basic_salary')->default(0);
             $table->double('allowance')->default(0);
+            $table->text('department')->nullable();
+            $table->text('faculty')->nullable();
             $table->text('attachment')->nullable();
             $table->integer('role')->default(1);
             $table->integer('status')->default(0);

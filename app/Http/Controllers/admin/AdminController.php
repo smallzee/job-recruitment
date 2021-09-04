@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -199,6 +200,51 @@ class AdminController extends Controller
         $data['page_title'] = "View Application";
         $data['user'] = $user;
         return view('admin.view-application',$data);
+    }
+
+    public function update_recruitment(Request $request){
+
+        $user = User::find($request->id);
+        if ($user->application_id == ""){
+            $user->application_id = sprintf("%05d", $request->id);
+        }
+
+        $user->status = $request->status;
+
+        if ($request->status == 0){
+            $user->basic_salary = 0;
+            $user->allowance =  0;
+            $user->department = "";
+            $user->faculty = "";
+        }else{
+            $user->basic_salary = $request->basic_salary;
+            $user->allowance =  $request->allowance;
+            $user->department = $request->department;
+            $user->faculty = $request->faculty;
+        }
+
+        $user->save();
+
+        return back()->with('flash_info','Recruitment profile has been updated successfully');
+
+    }
+
+    public function view_staff(User $user){
+        $data['page_title'] = "Staff";
+        $data['user'] = $user;
+        return view('admin.view-staff',$data);
+    }
+
+    public function download($image){
+        //PDF file is stored under project/public/download/info.pdf
+        $file = public_path("/assets/images/".$image);
+
+
+        $headers = array(
+            'Content-Type: application/pdf'
+        );
+
+        return Response::download($file, $image, $headers);
     }
 
     public function logout()
